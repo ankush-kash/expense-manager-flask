@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request,redirect
 import json
+import os
 
 app = Flask(__name__)
 
@@ -72,4 +73,8 @@ def delete(index):
     return redirect('/')
 
 
-app.run(debug=True)
+
+
+if __name__ == "_main_":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)

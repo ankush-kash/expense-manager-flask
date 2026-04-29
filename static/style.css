@@ -1,0 +1,132 @@
+/* --- Root Variables for easy theme adjustments --- */
+:root {
+    --bg-color: #0f172a;        /* Midnight Blue */
+    --card-bg: #1e293b;        /* Slate Blue */
+    --accent: #3b82f6;         /* Bright Blue */
+    --text: #f1f5f9;           /* Off White */
+    --text-dim: #94a3b8;       /* Muted Gray */
+    --danger: #ef4444;         /* Red for Delete */
+    --border: #334155;         /* Subtle border color */
+}
+
+/* --- Base Body Styling --- */
+body {
+    background-color: var(--bg-color);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto; /* Centers the whole app on the screen */
+}
+
+/* --- Headings --- */
+h2 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Links & Navigation --- */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* Target the 'Delete' link specifically based on the text it contains */
+a[href*="delete"] {
+    color: var(--danger);
+}
+
+/* --- Table Styling (Overriding border="2") --- */
+table {
+    width: 100%;
+    border-collapse: collapse !important; /* Forces borders to merge */
+    border: none !important;              /* Removes the ugly '2' border */
+    background-color: var(--card-bg);
+    margin: 25px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border) !important; /* Clean modern lines */
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* --- Form Styling --- */
+form {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    border: 1px solid var(--border);
+}
+
+/* Style the text before inputs (since they aren't in labels) */
+form {
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+input {
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Prevents input from spilling out */
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* --- Button Styling --- */
+button {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: transform 0.1s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}

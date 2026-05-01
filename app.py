@@ -66,7 +66,7 @@ def summary():
 def delete(index):
     expenses = load_expenses()
 
-    if 0 <= index <= len(expenses):
+    if 0 <= index < len(expenses):
         expenses.pop(index)
     
     save_expenses(expenses)
@@ -75,6 +75,6 @@ def delete(index):
 
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
